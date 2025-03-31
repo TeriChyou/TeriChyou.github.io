@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teri's Playground</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-            text-align: center;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teri's Playground</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to Teri's Playground</h1>
-    </header>
-    <main>
-        <p>This is a simple HTML template for your website. Start building something amazing!</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Teri's Playground. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>Teri's Playground</h1>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul id="repo-list">Loading...</ul>
+    </section>
+
+    <section id="art">
+      <h2>Art Gallery (from Twitter)</h2>
+      <blockquote class="twitter-tweet">
+        <a href="https://twitter.com/TeriChang21/status/1872262195847082282">Twitter Art</a>
+      </blockquote>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TeriChyou. All rights reserved.</p>
+  </footer>
+
+  <!-- Load GitHub script -->
+  <script src="script.js"></script>
+
+  <!-- Load Twitter embed script AFTER DOM is ready -->
+  <script>
+    window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
 </body>
 </html>

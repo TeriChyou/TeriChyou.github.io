@@ -1,3 +1,5 @@
+
+// GitHub Repositories Fetcher
 const username = "TeriChyou"; // <- Replace with your GitHub username
 
 fetch(`https://api.github.com/users/${username}/repos`)

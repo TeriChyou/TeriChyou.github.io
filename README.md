@@ -18,3 +18,7 @@
 - Remake the header but the padding and the style should re-design.
 - Added the visitor counter, but not working currently. (API is deadge) => Code removed.
 - Turned to use visitorbadge.
+
+### 2026 05 26 Re-do the repo
+
+- Turned this page into Vue + Tailwind

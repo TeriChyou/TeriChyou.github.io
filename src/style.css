@@ -1,5 +1,9 @@
-/* ============ Reset & Base ============ */
-* {
+/* 1. 引入 Tailwind v4 基礎核心 */
+@import "tailwindcss";
+
+/* 2. 將你原本的 CSS 融合進來 */
+@layer base {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,7 +19,6 @@
     min-height: 100vh;
   }
   
-  /* ============ Header ============ */
   header {
     background-color: #a76666;
     color: #fff;
@@ -24,7 +27,6 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
   
-  /* ============ Footer ============ */
   footer {
     background-color: #855858;
     color: #fff;
@@ -33,7 +35,6 @@
     margin-top: auto;
   }
   
-  /* ============ Main Layout ============ */
   main {
     flex: 1;
     padding: 2rem;
@@ -45,49 +46,26 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
   
-  /* ============ Sections ============ */
   section {
     margin-bottom: 2rem;
   }
   
+  /* 💡 修正關鍵：原本的 h2 改為純網頁預設顏色，這樣它就不會被 Tailwind 的 white 蓋掉 */
   h2 {
     margin-bottom: 1rem;
-    color: #a76666;
+    color: #a76666 !important; /* 加上 !important 確保絕對優先 */
     text-align: center;
   }
   
-  /* ============ Project List ============ */
-  #repo-list {
-    list-style: none;
-    padding-left: 0;
-    text-align: center;
-  }
-  
-  #repo-list li {
-    margin: 0.5rem 0;
-  }
-  
-  #repo-list a {
-    color: #855858;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #repo-list a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ============ Twitter Embed Styling ============ */
   .twitter-tweet {
     margin: 0 auto;
     text-align: center;
   }
   
-/* ============ Navbar Styling ============ */
-.navbar {
+  .navbar {
     background-color: #a76666;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Can remove this if not needed */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
   
   .nav-container {
@@ -100,7 +78,6 @@
     gap: 2rem;
   }
   
-  /* Brand (left) */
   .navbar-brand {
     font-size: 1.4rem;
     font-weight: bold;
@@ -109,7 +86,6 @@
     white-space: nowrap;
   }
   
-  /* Links (middle) */
   .nav-links {
     display: flex;
     gap: 1rem;
@@ -128,7 +104,6 @@
     color: #dbc7a2;
   }
   
-  /* Visitor Counter (right) */
   .visitor-counter {
     font-size: 0.95rem;
     background-color: #855858;
@@ -137,5 +112,4 @@
     color: #fff;
     white-space: nowrap;
   }
-  
-  
+}

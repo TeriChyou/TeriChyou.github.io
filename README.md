@@ -22,3 +22,4 @@
 ### 2026 05 26 Re-do the repo
 
 - Turned this page into Vue + Tailwind
+- deploy it
